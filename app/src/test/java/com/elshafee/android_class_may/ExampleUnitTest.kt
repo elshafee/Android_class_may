@@ -1,4 +1,4 @@
-package com.elshafee.androidclassmay
+package com.elshafee.android_class_may
 
 import org.junit.Test
 
