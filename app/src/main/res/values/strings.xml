@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Android class may</string>
+    <string name="hello_world">Hello Devlopers</string>
+    <string name="btn_hello_world">Hello World</string>
+    <string name="enter_your_name_here">Enter your name here</string>
+    <string name="i_agree">I agree</string>
+    <string name="hi_there">Welcome Back</string>
+    <string name="login">Login</string>
+    <string name="confirmation_password">Confirmation password</string>
+    <string name="signup">SignUp</string>
+    <string name="have_account_login_here">Have account? Login here</string>
+    <string name="email_fragment">Email Fragment</string>
+    <string name="password_fragment">Password Fragment</string>
+    <string name="details_fragment">details Fragment</string>
+    <string name="user_email_example">user@email.example</string>
+    <string name="user_name">User Name</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Password Fragment</string>
+    <string name="details">Detailed Fragment</string>
+    <string name="email_frag">Email Fragment</string>
+
+</resources>
