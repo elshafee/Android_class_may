@@ -11,7 +11,7 @@
     <string name="have_account_login_here">Have account? Login here</string>
     <string name="email_fragment">Email Fragment</string>
     <string name="password_fragment">Todo List</string>
-    <string name="details_fragment">details Fragment</string>
+    <string name="details_fragment">Notification Example</string>
     <string name="user_email_example">user@email.example</string>
     <string name="user_name">User Name</string>
     <string name="open">Open</string>
@@ -24,5 +24,10 @@
     <string name="title">Title</string>
     <string name="show_notification">Show Notification</string>
     <string name="coroutine_example">Coroutine Example</string>
+    <string name="item_name">Item Name</string>
+    <string name="add_item">Add Item</string>
+    <string name="item_amount">item amount</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_dialog">ADD</string>
 
 </resources>

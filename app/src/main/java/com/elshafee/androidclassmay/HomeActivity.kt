@@ -14,6 +14,8 @@ import com.elshafee.androidclassmay.fragments.EmailFragment
 import com.elshafee.androidclassmay.fragments.OurEvents
 import com.elshafee.androidclassmay.fragments.PasswordFragment
 import com.elshafee.androidclassmay.notification.NotificationExample
+import com.elshafee.androidclassmay.shoppingitemlist.ui.ShoppingItemListActivity
+import com.elshafee.androidclassmay.todolistapi.ui.TodoListApiActivity
 import com.elshafee.androidclassmay.todolistapp.TodoListActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -52,8 +54,16 @@ class HomeActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
 
-                R.id.details_fl -> {
+                R.id.notificationexample -> {
                    val intent = Intent(this,NotificationExample::class.java)
+                    startActivity(intent)
+                }
+                R.id.shoppingitemapp -> {
+                   val intent = Intent(this,ShoppingItemListActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.todolistapi -> {
+                   val intent = Intent(this,TodoListApiActivity::class.java)
                     startActivity(intent)
                 }
             }
