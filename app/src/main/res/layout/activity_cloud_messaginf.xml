@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".firebasenotification.ui.CloudMessaging">
+
+    <EditText
+        android:id="@+id/etnotificationTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_your_notification_title"
+        android:layout_margin="@dimen/_20sdp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etnotificationMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:hint="@string/enter_your_notification_message"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etnotificationToken"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:hint="@string/user_device_token"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnSendNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="@string/send_notification"/>
+
+</LinearLayout>

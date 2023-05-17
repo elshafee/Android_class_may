@@ -1,0 +1,135 @@
+package com.elshafee.androidclassmay
+
+import android.content.Intent
+import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import com.elshafee.androidclassmay.auth.LoginScreen
+import com.elshafee.androidclassmay.breakingbadapi.ui.BreakingBadActivity
+import com.elshafee.androidclassmay.coroutine.CoroutineExample
+import com.elshafee.androidclassmay.firebasenotification.ui.CloudMessaging
+import com.elshafee.androidclassmay.firestoreapp.ui.FirestoreApp
+import com.elshafee.androidclassmay.firstorage.ui.FireStorageApp
+import com.elshafee.androidclassmay.fragments.DetailsFragment
+import com.elshafee.androidclassmay.fragments.OurEvents
+import com.elshafee.androidclassmay.notification.NotificationExample
+import com.elshafee.androidclassmay.shoppingitemlist.ui.ShoppingItemListActivity
+import com.elshafee.androidclassmay.todolistapi.ui.TodoListApiActivity
+import com.elshafee.androidclassmay.todolistapp.TodoListActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+
+class HomeActivity : AppCompatActivity() {
+    lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var auth: FirebaseAuth
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_home)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        auth = FirebaseAuth.getInstance()
+
+
+        val drawer = findViewById<DrawerLayout>(R.id.drawerLayout)
+        val navview = findViewById<NavigationView>(R.id.navView)
+        val bottomnav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        val email = OurEvents()
+        val password = TodoListActivity()
+        val details = DetailsFragment()
+
+        toggle = ActionBarDrawerToggle(this, drawer, R.string.open, R.string.close)
+        drawer.addDrawerListener(toggle)
+        toggle.syncState()
+
+        setCurrentFragment(email)
+
+        navview.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.email_fl -> {
+                    setCurrentFragment(email)
+                }
+
+                R.id.password_fl -> {
+                    val intent = Intent(this, CoroutineExample::class.java)
+                    startActivity(intent)
+                }
+
+                R.id.notificationexample -> {
+                    val intent = Intent(this, NotificationExample::class.java)
+                    startActivity(intent)
+                }
+
+                R.id.shoppingitemapp -> {
+                    val intent = Intent(this, ShoppingItemListActivity::class.java)
+                    startActivity(intent)
+                }
+
+                R.id.todolistapi -> {
+                    val intent = Intent(this, TodoListApiActivity::class.java)
+                    startActivity(intent)
+                }
+
+                R.id.breakingbad -> {
+                    val intent = Intent(this, BreakingBadActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.firestore -> {
+                    val intent = Intent(this, FirestoreApp::class.java)
+                    startActivity(intent)
+                }   R.id.firestorage -> {
+                    val intent = Intent(this, FireStorageApp::class.java)
+                    startActivity(intent)
+                }R.id.firenotification -> {
+                    val intent = Intent(this, CloudMessaging::class.java)
+                    startActivity(intent)
+                }
+
+                R.id.logout -> {
+                    auth.signOut()
+                    val intent = Intent(this, LoginScreen::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+
+        bottomnav.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.email_fl -> {
+                    setCurrentFragment(email)
+                }
+
+                R.id.password_fl -> {
+                    setCurrentFragment(password)
+                }
+
+                R.id.details_fl -> {
+                    setCurrentFragment(details)
+                }
+            }
+            true
+        }
+
+
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.flFragment, fragment)
+            commit()
+        }
+}

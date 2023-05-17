@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".firstorage.ui.FireStorageApp">
+<ImageView
+    android:id="@+id/ivstorage"
+    android:layout_width="@dimen/_150sdp"
+    android:layout_height="@dimen/_150sdp"
+    android:layout_marginStart="@dimen/_80sdp"
+    android:layout_marginTop="@dimen/_12sdp"
+    android:background="#D6D6D6"
+    />
+
+    <Button
+        android:id="@+id/btnupload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="Upload"
+        />
+<Button
+        android:id="@+id/btndownload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_20sdp"
+
+    android:text="download"
+        />
+    <Button
+        android:id="@+id/btndelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="Delete"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvStorageimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/email_fl"
+        android:title="@string/email_fragment"
+        android:icon="@drawable/email"
+        />
+    <item
+        android:id="@+id/password_fl"
+        android:title="@string/password_fragment"
+        android:icon="@drawable/todo"
+        />
+    <item
+        android:id="@+id/details_fl"
+        android:title="@string/details_fragment"
+        android:icon="@drawable/notification"
+        />
+
+
+
+</menu>
